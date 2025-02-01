@@ -16,9 +16,6 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Empty } from "@/components/Empty";
 import { Loader } from "@/components/Loader";
-import { cn } from "@/lib/utils";
-import { UserAvatar } from "@/components/UserAvatar";
-import { BotAvatar } from "@/components/BotAvatar";
 import { useState } from "react";
 import {
   Select,
@@ -67,7 +64,7 @@ const ImagePage = () => {
     <>
       <Heading
         title="Image Generation"
-        description="Turn your prompt into an image"
+        description="Turn your prompt into image"
         icon={ImageIcon}
         iconColor="text-yellow-500"
         bgColor="bg-yellow-500/10"
@@ -173,7 +170,11 @@ const ImagePage = () => {
                   <Image src={src} alt="Image" fill />
                 </div>
                 <CardFooter className="p-2">
-                  <Button onClick={() => window.open(src)} variant={"secondary"} className="w-full">
+                  <Button
+                    onClick={() => window.open(src)}
+                    variant={"secondary"}
+                    className="w-full"
+                  >
                     <Download className="h-4 w-4 mr-2" />
                     Download
                   </Button>
